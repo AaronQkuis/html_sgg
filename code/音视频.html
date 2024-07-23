@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        audio 标签 引入音频文件,默认情况不允许用户控制播放停止
+        属性：
+            controls 是否允许用户控制播放
+            autoplay 是否自动播放 大部分浏览器不会自动播放
+    -->
+    <!-- <audio src="../source/1.mp3" controls></audio> -->
+    <audio controls>
+        对不起，您的浏览器不支持升级浏览器
+        <source src="../source/1.mp3">
+        <source src="../source/1.ogg">
+        <embed src="../source/1.mp3" type="audio/mp3" width="" height=""> 
+        <!-- 第一个不起作用就找第二个 -->
+    </audio>
+    <!-- <embed src="../source/1.mp3" type="audio/mp3" width=> -->
+    <!-- 
+        video 和audio使用类似
+        webm 格式    
+    -->
+    
+    <video src="../source/1.mp4" controls></video>
+
+</body> 
+</html>

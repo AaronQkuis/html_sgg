@@ -1,4 +1,4 @@
-# 第一章 认识网页
+# 第1章 认识网页
 
 渲染特定的编程语言 html 
 
@@ -13,7 +13,7 @@ W3C 万维网联盟
 - Hyptertext Markup Language 超文本标记语言
 - 负责网页的结构
 
-# 第二章 HTML 基础语法
+# 第2章 HTML 基础语法
 
 ## 2.1  认识标签
 
@@ -281,3 +281,105 @@ javascript:;
 ```
 
 alt 会在图片无法加载时显示
+
+width 
+
+height
+
+如果只改了高或者长度，它会等比例缩放，一般不建议修改大小	
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="../images/1.jpg" width="500" height="500" alt="风景">
+</body>
+</html>
+```
+
+图片格式
+
+- jpg 颜色丰富，不支持透明效果，不支持动图
+
+- jpeg
+
+- gif  支持动图，简单透明
+
+- png 支持颜色丰富，支持复杂透明，不支持动图 用的最多
+
+- webp 兼容性差
+
+- base64 需要和网页一起加载的图片
+
+**效果一样，用小的**
+
+## 2.15 内联框架
+
+iframe
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        内联框架：用于向当前页面中引入一个其他页面
+        src 指定要引入页面的路径
+        frameborder 指定内联框架的边框
+    -->
+    <iframe src="https://www.starvistar.com" width="800" height="600" frameborder="0"></iframe>
+</body>
+</html>
+```
+
+## 2.16 音视频
+
+video
+
+audio
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        audio 标签 引入音频文件,默认情况不允许用户控制播放停止
+        属性：
+            controls 是否允许用户控制播放
+            autoplay 是否自动播放 大部分浏览器不会自动播放
+    -->
+    <!-- <audio src="../source/1.mp3" controls></audio> -->
+    <audio controls>
+        对不起，您的浏览器不支持升级浏览器
+        <source src="../source/1.mp3">
+        <source src="../source/1.ogg">
+        <embed src="../source/1.mp3" type="audio/mp3" width="" height=""> 
+        <!-- 第一个不起作用就找第二个 -->
+    </audio>
+    <!-- <embed src="../source/1.mp3" type="audio/mp3" width=> -->
+    <!-- 
+        video 和audio使用类似
+        webm 格式    
+    -->
+    
+    <video src="../source/1.mp4" controls></video>
+
+</body> 
+</html>
+```
+
+# 第3章 CSS基础语法

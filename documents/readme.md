@@ -594,3 +594,117 @@ p{
 ```
 
 ## 3.4 复合选择器
+
+交集选择器 选择器1选择器2
+
+并集选择器  逗号分隔，相当于或
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red{
+            color: red;
+        }
+        /* 
+            复合选择器，交集选择器，同时满足
+            语法：选择器1选择器2
+            注意：元素选择器开头
+        */
+        div.red{
+            font-size: 30px;
+        }
+        /* 
+            并集选择器 同时选择
+            语法：逗号分隔，逗号相当于或
+        */
+        h1,span{
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="red">我是div</div>
+    <p class="red">我是p</p>
+    <h1>标题</h1>
+    <span>span</span>
+</body>
+</html>
+```
+
+## 3.5 关系选择器
+
+子元素选择器    父元素 > 子元素
+
+后代选择器   祖先 后代
+
+兄弟选择器  兄 + 紧挨着的第   兄 ~ 弟弟们
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            父元素
+            子元素
+            祖先元素，间接包含
+                - 直接或间接包含
+            后代元素
+                - 直接或间接
+            兄弟元素
+                - 拥有相同父元素
+        */
+        /* 
+            为div子元素span设置
+            子元素选择器
+            语法：父元素 > span
+        */
+        /* div > span{
+            color: orange;
+        } */
+        /* 
+            后代元素选择器
+            语法：祖先 后代
+        */
+        /* div span{
+            color: orange
+        } */
+        /* div > p > span{
+            color: red;
+        } */
+
+        /* 
+            兄弟选择器
+            语法：前一个 + 下一个 影响紧挨着的弟弟
+            注意：紧挨着，隔了一个元素就选不到
+
+            语法：兄 ~ 第 影响所有弟弟
+        */
+        p + span{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        我是div
+        <p>
+            我是div中的p元素
+            <span>我是p中的span</span>
+        </p>
+        <span>我是div中的的span</span>
+    </div>
+</body>
+</html>
+```
+
+## 3.6 属性选择器
+

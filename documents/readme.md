@@ -383,3 +383,214 @@ audio
 ```
 
 # 第3章 CSS基础语法
+
+## 3.1 CSS位置
+
+第一种：标签内部，内联样式
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+        css 简介：层叠样式表，设置网页中元素的样式        
+    -->
+    <!--
+    第一种： 标签内部 ，内联样式
+    -->
+    <p style="color: red; font-size: 60px;">少小离家老大回</p>
+
+    <p style="color: blue; font-size: 40px;">今天天气真不错</p>
+
+
+</body>
+
+</html>
+```
+
+第二种： 单独一个style标签在head里，内部标签， 只能对一个网页起作用。
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        第二种：内部样式表 
+        修改一处即可全部修改
+    -->
+    <style>
+        p{color: yellow;}
+    </style>
+</head>
+
+<body>
+    <!-- 
+        css 简介：层叠样式表，设置网页中元素的样式        
+    -->
+    <!--
+    第一种： 标签内部 ，内联样式
+    -->
+    <p style="color: red; font-size: 60px;">少小离家老大回</p>
+
+    <p style="color: blue; font-size: 40px;">今天天气真不错</p>
+
+    <p>style 标签</p>
+
+</body>
+
+</html>
+```
+
+第三种(**最佳使用方式**)：外部样式表，多个网页中使用，需要link标签使用，可以使用浏览器缓存机制，提高加载速度
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        第二种：内部样式表 
+        修改一处即可全部修改
+    -->
+    <!-- <style>
+        p{color: yellow;}
+    </style> -->
+    <!-- 
+        第三种： 外部样式表 
+    -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <!-- 
+        css 简介：层叠样式表，设置网页中元素的样式        
+    -->
+    <!--
+    第一种： 标签内部 ，内联样式
+    -->
+    <p style="color: red; font-size: 60px;">少小离家老大回</p>
+
+    <p style="color: blue; font-size: 40px;">今天天气真不错</p>
+
+    <p>style 标签</p>
+
+</body>
+
+</html>
+```
+
+```css
+p{
+    color: rebeccapurple;
+    font-size: 20px;
+}
+```
+
+## 3.2 CSS语法
+
+注释
+
+```css
+/* CSS注释实例 */
+```
+
+选择器，声明块
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 在style标签里遵循css语法，注释也不一样 -->
+    <style>
+        /* 
+            CSS注释实例 
+            CSS基本语法
+                选择器 声明块
+
+            选择器
+
+            声明块：名值对结构
+        
+        */
+        p{
+            color: rebeccapurple;
+            font-size: 40px;
+        }
+    </style>
+</head>
+<body>
+    <p>今天天气真不错</p>
+</body>
+</html>
+```
+
+## 3.3 常用选择器
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            元素选择器
+        */
+        h1{
+            color: red;
+        }
+        p{
+            color: black;
+        }
+        /* 
+            id选择器 #id
+        */
+        #red{
+            color: red;
+        }
+        /* 
+            类选择器 .class 多个class使用空格隔开
+        */
+        .blue{
+            color: aqua;
+        }
+        .abc{
+            font-size: 30px;
+        }
+        /* 
+            通配选择器 *
+        */
+        *{
+            color:black;
+        }
+    </style>
+</head>
+<body>
+    <h1>标题</h1>
+    <p>第一段</p>
+    <p class="blue abc">第二段</p>
+    <p id="red">第三段</p>
+    <p class="blue">第四段</p>
+</body>
+</html>
+```
+
+## 3.4 复合选择器

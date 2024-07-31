@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            ul中第一个li设置为红色
+        */
+        /* 
+            伪类：不存在的类，描述元素的特殊状态
+            如：点击，第一个子元素，鼠标移入
+            - 一般使用冒号开头
+            -   子元素
+                :first-child
+                :last-child
+                :nth-child(3)
+                :nth-child(n) 全选中
+                :nth-child(2n) 或 even 偶数位元素
+                :nth-child(2n+1) 或 odd 奇数位元素
+            - 依据所有元素排序
+            - 同类子元素(和上面的区别，只找相同类型)
+                :first-of-type
+            - :not() 否定伪类
+                将复合的元素从选择器排除
+                ul > li:not(:nth-child(3)){
+        */
+        /* ul > li:first-child{
+            color: red;
+        }
+        ul > li:last-child{
+            color: red;
+        } */
+        ul > li:not(:nth-child(3)){
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>第1个</li>
+        <li class="first">第2个</li>
+        <li>第3个</li>
+        <li>第4个</li>
+        <li>第5个</li>
+    </ul>
+</body>
+</html>

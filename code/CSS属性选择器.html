@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            第一种：[属性名]
+            第二种：[属性名=属性值]
+            第三种：[属性名^=属性值] 以属性值开头的元素
+            第四种：[属性名$=属性值] 以属性值结尾的元素
+            第五种：[属性名*=属性值] 含有属性值的元素
+        */
+        p[title^=abc]{
+            color: red;
+        }
+        p[title$=cat]{
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+    <p title="abc">第一段</p>
+    <p title="abcedfcat">第一段</p>
+    <p title="cat">第一段</p>
+    <p>第一段</p>
+    <p>第一段</p>
+    <p>第一段</p>
+</body>
+</html>

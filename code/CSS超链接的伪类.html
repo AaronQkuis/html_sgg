@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            1.访问过
+            2.没访问过
+        */
+        /* 没访问 */
+        a:link{
+            color: red;
+            font-size: 40px;
+        }
+        /* 
+            由于隐私的原因，在visited中只能改颜色
+        */
+        /* 访问过 */
+        a:visited{
+            color: orange;
+            font-size: 40px;
+        }
+        /* 鼠标移入 */
+        a:hover{
+            color: aqua;
+        }
+        /* 点击时 */
+        a:active{
+            color: yellowgreen;
+        }
+    </style>
+</head>
+<body>
+    <a href="https://www.starvistar.com">SVS</a>
+    <br>
+    <a href="https://www.starvistar123.com">SVS</a>
+</body>
+</html>

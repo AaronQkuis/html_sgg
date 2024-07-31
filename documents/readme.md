@@ -708,3 +708,178 @@ p{
 
 ## 3.6 属性选择器
 
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            第一种：[属性名]
+            第二种：[属性名=属性值]
+            第三种：[属性名^=属性值] 以属性值开头的元素
+            第四种：[属性名$=属性值] 以属性值结尾的元素
+            第五种：[属性名*=属性值] 含有属性值的元素
+        */
+        p[title^=abc]{
+            color: red;
+        }
+        p[title$=cat]{
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+    <p title="abc">第一段</p>
+    <p title="abcedfcat">第一段</p>
+    <p title="cat">第一段</p>
+    <p>第一段</p>
+    <p>第一段</p>
+    <p>第一段</p>
+</body>
+</html>
+```
+
+## 3.7 伪类选择器
+
+伪类 带一个冒号
+
+伪元素 带两个冒号
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            ul中第一个li设置为红色
+        */
+        /* 
+            伪类：不存在的类，描述元素的特殊状态
+            如：点击，第一个子元素，鼠标移入
+            - 一般使用冒号开头
+            -   子元素
+                :first-child
+                :last-child
+                :nth-child(3)
+                :nth-child(n) 全选中
+                :nth-child(2n) 或 even 偶数位元素
+                :nth-child(2n+1) 或 odd 奇数位元素
+            - 依据所有元素排序
+            - 同类子元素(和上面的区别，只找相同类型)
+                :first-of-type
+            - :not() 否定伪类
+                将复合的元素从选择器排除
+                ul > li:not(:nth-child(3)){
+        */
+        /* ul > li:first-child{
+            color: red;
+        }
+        ul > li:last-child{
+            color: red;
+        } */
+        ul > li:not(:nth-child(3)){
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>第1个</li>
+        <li class="first">第2个</li>
+        <li>第3个</li>
+        <li>第4个</li>
+        <li>第5个</li>
+    </ul>
+</body>
+</html>
+```
+
+## 3.8 超连接的伪类
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            1.访问过
+            2.没访问过
+        */
+        /* 没访问 */
+        a:link{
+            color: red;
+            font-size: 40px;
+        }
+        /* 
+            由于隐私的原因，在visited中只能改颜色
+        */
+        /* 访问过 */
+        a:visited{
+            color: orange;
+            font-size: 40px;
+        }
+        /* 鼠标移入 */
+        a:hover{
+            color: aqua;
+        }
+        /* 点击时 */
+        a:active{
+            color: yellowgreen;
+        }
+    </style>
+</head>
+<body>
+    <a href="https://www.starvistar.com">SVS</a>
+    <br>
+    <a href="https://www.starvistar123.com">SVS</a>
+</body>
+</html>
+```
+
+## 3.9 伪元素
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=p, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            伪元素：页面中一些特殊的不真实存在的元素
+            ::first-letter 第一个字母
+            ::first-line 第一行
+            ::selection 选中的内容
+            ::after 元素的最后
+            ::before 元素的开始
+                - before 和 after必须结合content属性使用
+        */
+        p::first-letter{
+            font-size: 40px;
+        }
+        p::first-line{
+            background-color: yellow;
+        }
+        div::before{
+            content: 'abc';
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div>hello how are you</div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore voluptatibus repellat dolores sed ex iste illo? A non odit iure alias iusto itaque, vel eius esse aliquam commodi ipsa blanditiis?</p>
+</body>
+</html>
+```
+

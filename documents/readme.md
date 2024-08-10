@@ -883,3 +883,174 @@ p{
 </html>
 ```
 
+## 3.10 继承
+
+后代元素应用样式，如 p元素中的span
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            样式的继承，后代元素
+            并不是所有的元素都会被继承，比如背景，布局相关
+        */
+        body{
+            font-size: 12px;
+        }
+        p{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        我是一个p元素
+        <span>我是p元素中的span</span>
+    </p>
+</body>
+</html>
+```
+
+## 3.11 选择器的权重
+
+样式不生效时，思考下权重
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            选择器的权重
+            内联样式 1000        1 0 0 0 
+            id选择器 100         0 1 0 0
+            类/伪类选择器 10     0 0 1 0  
+            元素选择器 1         0 0 0 1
+            通配选择器 0
+            继承没有优先级
+            !important 1000
+
+            比较优先级时需要将所有的选择器优先级进行相加计算
+            分组选择器是单独计算的
+            选择器的累加不会超过最大的数量级，不进位
+            !important 开发中慎用，优先级最高
+        */
+        div{
+            color: red !important;
+        }
+        .red{
+            color: yellow;
+        }
+        *{
+            color: blue;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- <div id="red" class="red" style="background-color: skyblue;">我是一个div</div> -->
+    <div id="red" class="red">我是一个div</div>
+
+</body>
+</html>
+```
+
+## 3.12 像素和百分比（单位）
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            px 像素
+            % 百分比
+            vw 窗口宽度的百分比
+            vh 窗口高度的百分比
+            vmin 窗口最小宽度的百分比
+            vmax 窗口最大宽度的百分比
+            em 相对自身元素 字体大小计算 font-size
+            rem 相对根元素  如html
+        */
+        html{
+            font-size: 10px;
+        }
+        .box1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+        .box2{
+            width: 50%;
+            height: 50%;
+            background-color: blue;
+        }
+        .box3{
+            width: 50vw;
+            height: 50vh;
+            background-color: yellow;
+        }
+        .box4{
+            font-size: 5px;
+            width: 50em;
+            height: 50em;
+            background-color: green;
+        }
+        .box5{
+            width: 50rem;
+            height: 50rem;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+    <div class="box3"></div>
+    <div class="box4"></div>
+    <div class="box5"></div>
+</body>
+</html>
+```
+
+## 3.13 颜色
+
+```HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            红绿蓝
+            rgba(红,绿,蓝,.5) .5半透明 0表示完全透明
+            十六进制 #aabbcc
+            HSL色值 hsl(色调,饱和度,亮度)
+        */
+        .box1{
+            width: 100px;
+            height: 100px;
+            background-color: rgb(255, 0, 0);
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+</body>
+</html>
+```
+

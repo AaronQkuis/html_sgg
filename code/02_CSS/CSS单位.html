@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            px 像素
+            % 百分比
+            vw 窗口宽度的百分比
+            vh 窗口高度的百分比
+            vmin 窗口最小宽度的百分比
+            vmax 窗口最大宽度的百分比
+            em 相对自身元素 字体大小计算 font-size
+            rem 相对根元素  如html
+        */
+        html{
+            font-size: 10px;
+        }
+        .box1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+        .box2{
+            width: 50%;
+            height: 50%;
+            background-color: blue;
+        }
+        .box3{
+            width: 50vw;
+            height: 50vh;
+            background-color: yellow;
+        }
+        .box4{
+            font-size: 5px;
+            width: 50em;
+            height: 50em;
+            background-color: green;
+        }
+        .box5{
+            width: 50rem;
+            height: 50rem;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+    <div class="box3"></div>
+    <div class="box4"></div>
+    <div class="box5"></div>
+</body>
+</html>

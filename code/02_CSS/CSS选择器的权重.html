@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            选择器的权重
+            内联样式 1000        1 0 0 0 
+            id选择器 100         0 1 0 0
+            类/伪类选择器 10     0 0 1 0  
+            元素选择器 1         0 0 0 1
+            通配选择器 0
+            继承没有优先级
+            !important 1000
+
+            比较优先级时需要将所有的选择器优先级进行相加计算
+            分组选择器是单独计算的
+            选择器的累加不会超过最大的数量级，不进位
+            !important 开发中慎用，优先级最高
+        */
+        div{
+            color: red !important;
+        }
+        .red{
+            color: yellow;
+        }
+        *{
+            color: blue;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- <div id="red" class="red" style="background-color: skyblue;">我是一个div</div> -->
+    <div id="red" class="red">我是一个div</div>
+
+</body>
+</html>
